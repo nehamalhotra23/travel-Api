@@ -7,6 +7,7 @@ using System;
 
 namespace Travel.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class ReviewsController : ControllerBase
@@ -18,7 +19,9 @@ namespace Travel.Controllers
             _db = db;
         }
 
-        // GET api/animals
+        /// <summary>
+        /// You may enter a String with a City ID or a rating minimum to filter your searches.
+        /// </summary>
         [HttpGet]
         public ActionResult<IEnumerable<Review>> Get(string cityId, string rating)
         {

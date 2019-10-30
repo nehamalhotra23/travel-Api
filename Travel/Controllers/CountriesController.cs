@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Travel.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class CountriesController : ControllerBase
